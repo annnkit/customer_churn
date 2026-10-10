@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Result</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Prediction Results</h1>
+            <p>Bank customer churn analysis</p>
+        </header>
+
+        <div class="form-card result-card">
+            <p class="result-label">Model Prediction</p>
+
+            <h2 class="result-heading">{{ result }}</h2>
+
+            <div class="probability-section">
+                <p>Estimated churn probability</p>
+
+                <div class="probability-value">
+                    {{ percentage }}%
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill"
+                         style="width: {{ percentage }}%;">
+                    </div>
+                </div>
+            </div>
+
+            <p class="result-note">
+                This is a model estimate, not a guarantee
+                of the customer's future behavior.
+            </p>
+
+            <a class="submit-button back-button" href="/">
+                Predict Another Customer
+            </a>
+        </div>
+    </div>
+</body>
+</html>
